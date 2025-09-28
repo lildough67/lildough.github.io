@@ -1,67 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Brand - Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LIL DOUGH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Top Navigation -->
   <header class="navbar">
-    <nav>
+    <div class="nav-wrap">
       <ul class="nav-left">
-        <li><a href="#">EXPLORE</a></li>
-        <li><a href="#">WOMEN</a></li>
-        <li><a href="#">MEN</a></li>
+        <li class="dropdown">
+          <a href="#" class="drop-toggle">EXPLORE</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-category-link="sneakers" data-breadcrumb="MEN / SHOES / SNEAKERS">Sneakers</a></li>
+            <li><a href="#" data-category-link="boots" data-breadcrumb="MEN / SHOES / BOOTS">Boots</a></li>
+            <li><a href="#" data-category-link="men" data-breadcrumb="MEN">Men</a></li>
+            <li><a href="#" data-category-link="women" data-breadcrumb="WOMEN">Women</a></li>
+            <li><a href="#" data-category-link="all" data-breadcrumb="ALL PRODUCTS">All Products</a></li>
+          </ul>
+        </li>
+        <li><a href="#" data-category-link="women" data-breadcrumb="WOMEN">WOMEN</a></li>
+        <li><a href="#" data-category-link="men" data-breadcrumb="MEN">MEN</a></li>
       </ul>
+
       <div class="logo">
- 	 <img src="logo.png" alt="LIL DOUGH">
+        <!-- Replace with your real logo file (logo.png) if you want -->
+        <img src="logo.png" alt="LIL DOUGH" onerror="this.onerror=null;this.src='https://picsum.photos/seed/logo/200/40'">
       </div>
+
       <ul class="nav-right">
+        <li>
+          <input class="search" type="search" placeholder="Search products..." aria-label="Search products">
+        </li>
         <li><a href="#">CLIENT SERVICES</a></li>
         <li><a href="#">LOGIN</a></li>
         <li><a href="#">CART</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
-  <!-- Filter / Sort -->
+  <!-- Controls -->
   <section class="controls">
-    <span>3 Products</span>
+    <div class="controls-left">
+      <div id="breadcrumb" class="crumb">ALL PRODUCTS</div>
+      <div id="product-count" class="count">0 Products</div>
+    </div>
     <div class="buttons">
-      <button>FILTER</button>
-      <button>SORT BY</button>
+      <button id="filterBtn">FILTER</button>
+      <button id="sortBtn">SORT BY</button>
     </div>
   </section>
 
-  <!-- Product Grid -->
-  <main class="grid">
-    <a href="product1.html" class="product-card">
-      <img src="https://cdn.discordapp.com/attachments/1117584648306962495/1421639726766624960/product1.png?ex=68d9c4ab&is=68d8732b&hm=386733c3b1a1bee8c2ba0cccdab1c6465e23cf715c22378adc68f54a05da078a&">
-      <h3>Track Sneaker</h3>
-      <p>2 colors</p>
-      <p class="price">$1,250</p>
-    </a>
-    <a href="product2.html" class="product-card">
-      <img src="https://cdn.discordapp.com/attachments/1117584648306962495/1421640737061212302/product2.png?ex=68d9c59c&is=68d8741c&hm=ff1eaa31507b92c16ae684e6c5e311ce115d31374c35404d52cb5403fbaa0593&">
-      <h3>Runner Sneaker</h3>
-      <p>8 colors</p>
-      <p class="price">$1,190</p>
-    </a>
-    <a href="product3.html" class="product-card">
-      <img src="https://cdn.discordapp.com/attachments/1117584648306962495/1421642888852537485/product3.png?ex=68d9c79d&is=68d8761d&hm=2f4afdaf201c8a502f62f0948ee1ea7797bfa2377cae2bef8f5e4b07860e5d2c&">
-      <h3>Classic Sneaker</h3>
-      <p>3 colors</p>
-      <p class="price">$990</p>
-    </a>
-    <a href="product4.html" class="product-card">
-      <img src="https://cdn.discordapp.com/attachments/1117584648306962495/1421642888852537485/product3.png?ex=68d9c79d&is=68d8761d&hm=2f4afdaf201c8a502f62f0948ee1ea7797bfa2377cae2bef8f5e4b07860e5d2c&">
-      <h3>Classic Sneaker</h3>
-      <p>3 colors</p>
-      <p class="price">$6700</p>
-    </a>
-  </main>
+  <!-- Products section (rendered dynamically) -->
+  <section class="products" id="products-section">
+    <!-- JS will render grid here -->
+  </section>
+
+  <!-- Data + Logic -->
+  <script src="data.js"></script>   <!-- holds PRODUCTS array -->
+  <script src="script.js"></script> <!-- renders grid + search + categories -->
 </body>
 </html>
