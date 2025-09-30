@@ -40,6 +40,11 @@ body {
   letter-spacing:0.6px;
 }
 
+.nav-right {
+  justify-content: flex-end; /* push items to the far right of its grid cell */
+  margin-left: auto;         /* ensures it hugs the right edge */
+}
+
 /* logo */
 .logo img { display:block; height:20px; margin:0 auto; }
 
@@ -154,3 +159,231 @@ body {
   .nav-right { display:none; }
   .grid { grid-template-columns: 1fr; }
 }
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: -1;
+  left: -100%;
+  height: 100%;
+  width: 33%; /* 1/3 of screen on desktop */
+  max-width: 360px;
+  background: #fff;
+  border-right: 1px solid #000;
+  padding: 20px;
+  z-index: 2000;
+  transition: left 0.3s ease;
+}
+.sidebar ul {
+  list-style: none;
+  margin-top: 40px;
+}
+.sidebar li {
+  margin-bottom: 16px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.sidebar .close-btn {
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+}
+
+/* Overlay */
+#sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1500;
+}
+
+/* Open state */
+.sidebar.open { left: 0; }
+#sidebarOverlay.show { display: block; }
+
+/* Full screen on mobile */
+@media (max-width: 520px) {
+  .sidebar { width: 100%; max-width: none; }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 33%;
+  max-width: 360px;
+  background: #fff;
+  border-right: 1px solid #000;
+  padding: 20px;
+  z-index: 2000;
+  transition: left 0.3s ease;
+}
+.sidebar ul {
+  list-style: none;
+  margin-top: 40px;
+}
+.sidebar li {
+  margin-bottom: 16px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.sidebar .close-btn {
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+}
+
+/* Overlay */
+#sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1500;
+}
+.sidebar.open { left: 0; }
+#sidebarOverlay.show { display: block; }
+
+/* Full screen on mobile */
+@media (max-width: 520px) {
+  .sidebar { width: 100%; max-width: none; }
+}
+
+/* controls search */
+.controls-search {
+  border: 1px solid #000;
+  padding: 6px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: 200px;
+}
+@media (max-width: 520px) {
+  .controls-search { width: 100%; }
+}
+/* ========== SIDEBAR + OVERLAY ========== */
+.sidebar {
+  position: fixed;
+  left: -100%;
+  /* top will be set by JS so it sits below header + controls */
+  height: calc(100%); /* JS will adjust height to fit below controls */
+  width: 33%;
+  max-width: 365px;
+  background: #fff;
+  border-right: 1px solid #000;
+  padding: 20px;
+  z-index: 2100; /* above overlay and page content */
+  transition: left 0.28s ease;
+  overflow-y: auto;
+}
+.sidebar ul {
+  list-style: none;
+  margin-top: 5px;
+  padding-left: 0;
+}
+.sidebar li {
+  margin-bottom: 16px;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  padding: 8px 0;
+}
+.sidebar .close-btn {
+  font-size: 28px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 14px;
+}
+
+/* overlay that only covers the products area (position/top is set by JS) */
+#sidebarOverlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  z-index: 2000; /* below sidebar (2100) */
+}
+
+/* open state */
+.sidebar.open { left: 0; }
+#sidebarOverlay.show { display: block; }
+
+/* Full screen on small screens */
+@media (max-width: 520px) {
+  .sidebar { width: 100%; max-width: none; }
+}
+
+/* controls search (when sidebar is open we replace breadcrumb with this) */
+.controls-search {
+  border: 1px solid #000;
+  padding: 6px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: 220px;
+  display: block;
+}
+@media (max-width: 520px) {
+  .controls-search { width: 100%; }
+}
+
+/* ensure header/controls visually remain above overlay */
+.navbar { position: sticky; top: 0; z-index: 3000; } /* keep nav on top */
+.controls { position: relative; z-index: 3000; }      /* keep controls on top */
+
+.card-img-wrap {
+  position: relative;
+}
+.card-img-wrap img {
+  width: 100%;
+  display: block;
+}
+.card-img-wrap button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: 1px solid #000;
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* hidden by default */
+}
+.card-img-wrap .img-prev { left: 8px; }
+.card-img-wrap .img-next { right: 8px; }
+.product-card:hover .card-img-wrap button {
+  display: block; /* show arrows only on hover */
+}
+

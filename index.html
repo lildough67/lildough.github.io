@@ -11,29 +11,18 @@
   <header class="navbar">
     <div class="nav-wrap">
       <ul class="nav-left">
-        <li class="dropdown">
-          <a href="#" class="drop-toggle">EXPLORE</a>
-          <ul class="dropdown-menu">
-            <li><a href="#" data-category-link="sneakers" data-breadcrumb="MEN / SHOES / SNEAKERS">Sneakers</a></li>
-            <li><a href="#" data-category-link="boots" data-breadcrumb="MEN / SHOES / BOOTS">Boots</a></li>
-            <li><a href="#" data-category-link="men" data-breadcrumb="MEN">Men</a></li>
-            <li><a href="#" data-category-link="women" data-breadcrumb="WOMEN">Women</a></li>
-            <li><a href="#" data-category-link="all" data-breadcrumb="ALL PRODUCTS">All Products</a></li>
-          </ul>
+        <li>
+          <a href="#" id="exploreToggle">EXPLORE</a>
         </li>
         <li><a href="#" data-category-link="women" data-breadcrumb="WOMEN">WOMEN</a></li>
         <li><a href="#" data-category-link="men" data-breadcrumb="MEN">MEN</a></li>
       </ul>
 
       <div class="logo">
-        <!-- Replace with your real logo file (logo.png) if you want -->
         <img src="logo.png" alt="LIL DOUGH" onerror="this.onerror=null;this.src='https://picsum.photos/seed/logo/200/40'">
       </div>
 
       <ul class="nav-right">
-        <li>
-          <input class="search" type="search" placeholder="Search products..." aria-label="Search products">
-        </li>
         <li><a href="#">CLIENT SERVICES</a></li>
         <li><a href="#">LOGIN</a></li>
         <li><a href="#">CART</a></li>
@@ -41,9 +30,21 @@
     </div>
   </header>
 
+  <!-- Sidebar -->
+  <aside id="exploreSidebar" class="sidebar" aria-hidden="true">
+    <button class="close-btn" id="closeSidebar" aria-label="Close explore menu">&times;</button>
+    <ul>
+	  <li><a href="#" data-category-link="shirts" data-breadcrumb="MEN / SHIRTS">Sneakers</a></li>
+      <li><a href="#" data-category-link="sneakers" data-breadcrumb="MEN / SHOES / SNEAKERS">Sneakers</a></li>
+      <li><a href="#" data-category-link="boots" data-breadcrumb="MEN / SHOES / BOOTS">Boots</a></li>
+      <li><a href="#" data-category-link="all" data-breadcrumb="ALL PRODUCTS">All Products</a></li>
+    </ul>
+  </aside>
+  <div id="sidebarOverlay" aria-hidden="true"></div>
+
   <!-- Controls -->
   <section class="controls">
-    <div class="controls-left">
+    <div class="controls-left" id="controlsLeft">
       <div id="breadcrumb" class="crumb">ALL PRODUCTS</div>
       <div id="product-count" class="count">0 Products</div>
     </div>
@@ -53,13 +54,11 @@
     </div>
   </section>
 
-  <!-- Products section (rendered dynamically) -->
-  <section class="products" id="products-section">
-    <!-- JS will render grid here -->
-  </section>
+  <!-- Products section -->
+  <section class="products" id="products-section"></section>
 
-  <!-- Data + Logic -->
-  <script src="data.js"></script>   <!-- holds PRODUCTS array -->
-  <script src="script.js"></script> <!-- renders grid + search + categories -->
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
