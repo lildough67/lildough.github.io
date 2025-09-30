@@ -6,8 +6,8 @@ window.PRODUCTS = [
   "price": 6769,
   "colors": "2 colors",
   "images": [
-    "images/ldwhiteteef.png",
-    "images/ldwhiteteeb.png"
+    "Images/ldwhiteteef.png",
+    "Images/ldwhiteteeb.png"
   ],
   "categories": ["shirts","men"]
 },
@@ -17,7 +17,7 @@ window.PRODUCTS = [
     "name": "Cayden x Ryan T Shirt",
     "price": 6769,
     "colors": "2 colors",
-    "image": "images/caydenxryan.png",
+    "image": "Images/caydenxryan.png",
     "categories": ["shirts","men"]
   },
   {
@@ -53,3 +53,4 @@ window.PRODUCTS = [
     "categories": ["boots","women"]
   }
 ];
+
