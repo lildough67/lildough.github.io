@@ -25,7 +25,7 @@ window.PRODUCTS = [
     "name": "Spongebob Dih",
     "price": 1250,
     "colors": "2 colors",
-    "image": "images/product2.png",
+    "image": "Images/product2.png",
     "categories": ["sneakers","men", "women"]
   },
   {
@@ -33,7 +33,7 @@ window.PRODUCTS = [
     "name": "Smoking Spongebob",
     "price": 1190,
     "colors": "8 colors",
-    "image": "images/product3.png",
+    "image": "Images/product3.png",
     "categories": ["sneakers","men"]
   },
   {
@@ -41,7 +41,7 @@ window.PRODUCTS = [
     "name": "Blue Collar Spongebob",
     "price": 990,
     "colors": "3 colors",
-    "image": "images/product1.png",
+    "image": "Images/product1.png",
     "categories": ["boots","men"]
   },
   {
@@ -49,8 +49,9 @@ window.PRODUCTS = [
     "name": "Smoking Spongebob (For left handed people, Out Of Stock)",
     "price": 3250,
     "colors": "5 colors",
-    "image": "images/lefthandedbonbob.png",
+    "image": "Images/lefthandedbonbob.png",
     "categories": ["boots","women"]
   }
 ];
+
 
